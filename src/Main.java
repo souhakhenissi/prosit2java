@@ -3,13 +3,13 @@
 public class Main {
     public static void main(String[] args) {
         Animal lion = new Animal("Lions","un lion",5,true);
-        Zoo myZoo = new Zoo("myZoo","Tunis",10);
+        Zoo myZoo = new Zoo("myZoo","Tunis");
         Animal Tiger = new Animal("Tigers","un tiger",5,true);
         Animal panda = new Animal("Pandas","un panda",4,true);
         Animal bear= new Animal("Bears","un bear",3,true);
         //myZoo.displayZoo();
-        System.out.println(myZoo);
-        System.out.println(panda);
+        //System.out.println(myZoo);
+        //System.out.println(panda);
         //System.out.println(myZoo.toString());
         //instruction 5 , 3)
         /*lion.family="Lions";
@@ -20,5 +20,20 @@ public class Main {
         myZoo.name="myZoo";
         myZoo.city="Tunis";
         myZoo.nbrCages=10;*/
+
+        myZoo.addAnimal(lion);
+        myZoo.addAnimal(Tiger);
+        myZoo.addAnimal(bear);
+
+        //myZoo.afficheAnimal();
+
+        myZoo.addAnimal(panda);
+        myZoo.addAnimal(panda);
+        myZoo.removeAnimal(panda);
+
+        myZoo.searchAnimal(lion);
+
+
     }
+
 }
