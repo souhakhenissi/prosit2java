@@ -1,7 +1,9 @@
+package entities;
+
 public class Zoo {
-    Animal[] animals = new Animal[25];
-    String name;
-    String city;
+    private Animal[] animals = new Animal[25];
+    private String name;
+    private String city;
     public static final int NBR_CAGES = 25;
 
     // instruction 6 , 1)
@@ -11,20 +13,40 @@ public class Zoo {
         //this.nbrCages = nbrCages;
     }
 
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        if (name==""){
+            System.out.println("le nom d'un zoo ne doit pas être vide");
+        }
+        this.name = name;
+    }
+
+    public String getCity() {
+        return city;
+    }
+    public void setCity(String city) {
+        this.city = city;
+    }
+
     // instruction 8
     public void displayZoo(){
-        System.out.println("Zoo Name: "+name);
-        System.out.println("Zoo City: "+city);
+        System.out.println("entities.Zoo Name: "+name);
+        System.out.println("entities.Zoo City: "+city);
         //System.out.println("Le nombre de cages est "+nbrCages);
     }
 
     public String toString(){
-        return "Zoo name: "+name+" city: "+city;//+" nbr cages: "+nbrCages;
+        return "entities.Zoo name: "+name+" city: "+city;//+" nbr cages: "+nbrCages;
 
     }
 
-    public boolean addAnimal(Animal animal){
-        for(int i=0;i<animals.length;i++){
+    public boolean addAnimal(Animal animal) {
+        if (isZooFull()) {
+            return false;
+        } else {
+            for(int i=0;i<animals.length;i++){
             if(animals[i]!=null && (animals[i]==animal)){
                 return false;
             }
@@ -34,6 +56,7 @@ public class Zoo {
                 animals[j]=animal;
                 return true;
             }
+        }
         }
         return false;
     }
