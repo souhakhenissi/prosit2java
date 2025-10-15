@@ -1,7 +1,6 @@
 package main;
 
-import entities.Animal;
-import entities.Zoo;
+import entities.*;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -37,6 +36,22 @@ public class Main {
         myZoo.removeAnimal(panda);
 
         myZoo.searchAnimal(lion);
+/************************************************************************************/
+//prosit 5
+        Aquatic a1= new Aquatic("Balaenopteridae", "Blue Whale", 25, true, "Sea");
+        Terrestrial t1= new Terrestrial("Elephantidae", "Elephant", 15, true, 4);
+        Dolphin d1= new Dolphin("Delphinidae", "Dolphin", 6, true, "Ocean", 25.5f);
+        Pengouin p1= new Pengouin("Spheniscidae", "Penguin", 4, false, "Antarctica", 30.2f);
+
+        System.out.println(a1);
+        System.out.println(t1);
+        System.out.println(d1);
+        System.out.println(p1);
+
+        a1.swim();
+        d1.swim();
+        p1.swim();
+
 
 
     }

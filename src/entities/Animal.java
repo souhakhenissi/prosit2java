@@ -1,6 +1,6 @@
 package entities;
 
-public class Animal {
+sealed public class Animal permits Aquatic,Terrestrial{
     private String family;
     private String name;
     private int age;
