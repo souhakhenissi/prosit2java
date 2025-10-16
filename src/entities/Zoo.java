@@ -5,6 +5,7 @@ public class Zoo {
     private String name;
     private String city;
     public static final int NBR_CAGES = 25;
+    private Aquatic[] aquaticAnimals = new Aquatic[10];
 
     // instruction 6 , 1)
     public Zoo(String name,String city)/*,int nbrCages*/ {
@@ -47,8 +48,8 @@ public class Zoo {
             return false;
         } else {
             for(int i=0;i<animals.length;i++){
-            if(animals[i]!=null && (animals[i]==animal)){
-                return false;
+                if(animals[i]!=null && (animals[i]==animal)){
+                    return false;
             }
         }
         for(int j=0;j<animals.length;j++){
@@ -120,5 +121,49 @@ public class Zoo {
             return z1;
         }
         return z2;
+    }
+
+    // prosit 6
+    public void addAquaticAnimal(Aquatic aquatic) {
+        for(int i=0;i<aquaticAnimals.length;i++){
+            if(aquaticAnimals[i]==null){
+                aquaticAnimals[i]=aquatic;
+            }
+        }
+    }
+
+    public void aquaticSwim() {
+        for (int i = 0; i < aquaticAnimals.length; i++) {
+            aquaticAnimals[i].swim();
+        }
+    }
+
+    public float maxPenguinSwimmingDepth(){
+        float max = 0;
+        for (int i = 0; i < aquaticAnimals.length; i++) {
+            if (aquaticAnimals[i] instanceof Pengouin) {
+                Pengouin p = (Pengouin) aquaticAnimals[i];
+                if (p.swimmingDepth > max) {
+                    max = p.swimmingDepth;
+                }
+            }
+        }
+        return max;
+    }
+
+    public void displayNumberOfAquaticsByType(){
+        int nbdolphin=0;
+        int nbpengouin=0;
+        for(int i=0;i<aquaticAnimals.length;i++){
+            if(aquaticAnimals[i] instanceof Dolphin){
+                nbdolphin++;
+            }
+            if(aquaticAnimals[i] instanceof Pengouin){
+                nbpengouin++;
+            }
+        }
+        System.out.println("NBDolphin "+nbdolphin);
+        System.out.println("NBPengouin "+nbpengouin);
+
     }
 }

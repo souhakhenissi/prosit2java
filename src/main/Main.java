@@ -38,21 +38,33 @@ public class Main {
         myZoo.searchAnimal(lion);
 /************************************************************************************/
 //prosit 5
-        Aquatic a1= new Aquatic("Balaenopteridae", "Blue Whale", 25, true, "Sea");
+        //Aquatic a1= new Aquatic("Balaenopteridae", "Blue Whale", 25, true, "Sea");
         Terrestrial t1= new Terrestrial("Elephantidae", "Elephant", 15, true, 4);
         Dolphin d1= new Dolphin("Delphinidae", "Dolphin", 6, true, "Ocean", 25.5f);
         Pengouin p1= new Pengouin("Spheniscidae", "Penguin", 4, false, "Antarctica", 30.2f);
 
-        System.out.println(a1);
+        //System.out.println(a1);
         System.out.println(t1);
         System.out.println(d1);
         System.out.println(p1);
 
-        a1.swim();
+        //a1.swim();
         d1.swim();
         p1.swim();
 
+        //prosit 6
+        //myZoo.addAquaticAnimal(a1);
+        myZoo.addAquaticAnimal(d1);
+        myZoo.addAquaticAnimal(p1);
 
+        myZoo.aquaticSwim();
+
+        System.out.println("Max penguin depth: " + myZoo.maxPenguinSwimmingDepth() + " meters");
+
+        myZoo.displayNumberOfAquaticsByType();
+
+        Dolphin d2 = new Dolphin("Delphinidae", "Blue", 7, true, "Sea", 30f);
+        System.out.println("d2 equals d3 ? " + d1.equals(d2));
 
     }
 
